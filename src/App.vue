@@ -1,16 +1,16 @@
 <template>
-  <HeaderTitle title="Test" />
+  <AppHeader title="Test" />
 
   <main>{{ mainText }}</main>
 </template>
 
 <script>
-import HeaderTitle from './components/HeaderTitle.vue'
+import AppHeader from './components/AppHeader.vue'
 
 export default {
   name: 'App',
   components: {
-    HeaderTitle
+    AppHeader
   },
   data() {
     return {

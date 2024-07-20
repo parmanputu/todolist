@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'HeaderTitle',
+  name: 'AppHeader',
   props: {
     title: {
       type: String,
