@@ -50,13 +50,3 @@ export default {
   }
 }
 </script>
-
-<style>
-header {
-  line-height: 1.5;
-  background-color: aqua;
-}
-main {
-  background-color: aquamarine;
-}
-</style>

@@ -1,19 +1,26 @@
 <template>
   <div>
     <form @submit.prevent="onSubmit">
-      <input type="text" name="inputTodo" v-model="inputTodo" />
-      <button type="submit">Add Todo</button>
+      <input
+        type="text"
+        class="py-3 px-3 border border-sky-500 text-sm mr-2"
+        name="inputTodo"
+        v-model="inputTodo"
+      />
+      <button type="submit" class="rounded-md bg-slate-600 text-white py-3 px-3">Add Todo</button>
     </form>
   </div>
-  <ul>
-    <li v-for="todo in todos" :key="todo.id">
+  <ul class="mt-5">
+    <li v-for="todo in todos" :key="todo.id" class="text-lg">
       <input
         type="checkbox"
         name="checkTodo"
         :checked="todo.status === 'done'"
         @change="toggle(todo.id)"
+        class="mr-3"
       />
-      {{ todo.name }}
+      <span v-if="todo.status === 'done'" class="line-through text-zinc-400">{{ todo.name }}</span>
+      <span v-else class="font-bold">{{ todo.name }}</span>
     </li>
   </ul>
 </template>

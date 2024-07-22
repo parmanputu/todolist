@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 class="text-3xl font-bold underline mb-5">{{ title }}</h1>
   </header>
 </template>
 
