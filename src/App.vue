@@ -2,7 +2,7 @@
   <AppHeader title="To-Do List App" />
 
   <main>
-    <AppList :todos @add-todo="addTodo" @toggle-todo="toggleTodo" />
+    <AppList :todos @add-todo="addTodo" @toggle-todo="toggleTodo" @remove-todo="removeTodo" />
   </main>
 </template>
 
@@ -18,18 +18,7 @@ export default {
   },
   data() {
     return {
-      todos: [
-        {
-          id: 1,
-          name: 'Learn vue.js',
-          status: 'inprogress'
-        },
-        {
-          id: 2,
-          name: 'Tailwind',
-          status: 'done'
-        }
-      ]
+      todos: []
     }
   },
   methods: {
@@ -46,6 +35,10 @@ export default {
       if (todo) {
         todo.status = todo.status === 'done' ? 'inprogress' : 'done'
       }
+    },
+    removeTodo(id) {
+      const todos = this.todos.filter((todo) => todo.id !== id)
+      this.todos = todos
     }
   }
 }
